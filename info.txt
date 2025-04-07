@@ -1,0 +1,123 @@
+https://www.youtube.com/watch?v=iikNIRBUTTw&list=PLCKuOXG0bPi2QiUaLmlMc2zMG4nlqqIC-&index=5
+https://youtu.be/FGQiNFA_7vY?list=PLCKuOXG0bPi2QiUaLmlMc2zMG4nlqqIC- quede
+
+configurar sdk: https://www.youtube.com/watch?v=XCj8Aoe--R4
+sdkmanager "ndk;27.1.12297006"
+sdkmanager "platform-tools"
+
+https://reactnavigation.org/docs/stack-navigator/
+https://github.com/oblador/react-native-vector-icons
+Create app
+npx @react-native-community/cli init componentsApp
+npx react-native doctor
+npx react-native run-android
+
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context
+npm install @react-navigation/stack
+npm install react-native-gesture-handler
+npm install @react-native-masked-view/masked-view
+
+
+configuracion
+MainActivity.kt
+import android.os.Bundle;
+class MainActivity: ReactActivity() {
+  // ...
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(null)
+  }
+  // ...
+}
+
+configuracion appComponennt
+import 'react-native-gesture-handler';
+import React, { Component } from 'react'
+import { NavigationContainer } from '@react-navigation/native';
+import { Navigator } from './presentation/navigator/Navigation';
+
+export default class AppComponent extends Component {
+  render() {
+    return (
+      <NavigationContainer>
+        <Navigator/>
+      </NavigationContainer>
+    )
+  }
+}
+
+
+STACK NAVIGATION:
+src -> presentation -> navigator -> Navigation.tsx 
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from '../screens/home/HomeScreen';
+
+const Stack = createStackNavigator();
+
+export const Navigator =()=> {
+  return (
+    <Stack.Navigator screenOptions={{
+        headerShown:false
+    }}>
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
+  );
+}
+
+
+ARCHIVO Info.Plist --> DE APP
+<key>UIAppFonts</key>
+<array>
+  <string>AntDesign.ttf</string>
+  <string>Entypo.ttf</string>
+  <string>EvilIcons.ttf</string>
+  <string>Feather.ttf</string>
+  <string>FontAwesome.ttf</string>
+  <string>FontAwesome5_Brands.ttf</string>
+  <string>FontAwesome5_Regular.ttf</string>
+  <string>FontAwesome5_Solid.ttf</string>
+  <string>FontAwesome6_Brands.ttf</string>
+  <string>FontAwesome6_Regular.ttf</string>
+  <string>FontAwesome6_Solid.ttf</string>
+  <string>Foundation.ttf</string>
+  <string>Ionicons.ttf</string>
+  <string>MaterialIcons.ttf</string>
+  <string>MaterialCommunityIcons.ttf</string>
+  <string>SimpleLineIcons.ttf</string>
+  <string>Octicons.ttf</string>
+  <string>Zocial.ttf</string>
+  <string>Fontisto.ttf</string>
+</array>
+
+GLOBAL STYLE:
+https://gist.github.com/Klerith/8cc5b908636c53ee91d2bdae7be0aa25
+
+ANIMATED: https://reactnative.dev/docs/animated
+
+adb disconnect  
+adb devices  
+adb connect 192.168.217.101:5555  
+
+
+icons 
+https://www.npmjs.com/package/react-native-vector-icons
+https://www.youtube.com/watch?v=GgwX05Lm178&t=260s&pp=ygUhbWF0ZXJpYWwgaWNvbiByZWFjdCBuYXRpdmUgaW5zdGFs
+
+Animated.ValueXY
+https://reactnative.dev/docs/animatedvaluexy
+
+PROMP
+https://www.npmjs.com/package/react-native-prompt-android
+
+TEXT INPUT
+https://reactnative.dev/docs/textinput
+
+SCROLL VIEW
+https://reactnative.dev/docs/scrollview
+
+Documentación - SectionList: 
+https://reactnative.dev/docs/sectionlist
+
+
+🔖 Aquí les dejo el enlace al material adjunto:
+https://picsum.photos/
